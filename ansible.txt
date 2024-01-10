@@ -1,0 +1,41 @@
+1  ssh-keygen
+    2  ls -a
+    3  cd .ssh/
+    4  ls
+    5  cd id_rsa
+    6  cat id_rsa
+    7  exit
+    8  ssh-copy-id ansible@172.31.45.159
+    9  ssh 172.31.45.159
+   10  ansible demo -m "uptime"
+   11  ansible demo -m ping
+   12  ansible demo -m "uptime"
+   13  ansible demo -a "uptime"
+   14  ansible demo -m command -a "pwd"
+   15  ansible demo -m shell -a "ls -a"
+   16  ansible demo -b -m yum -a "pkg=httpd state=present"
+   17  ansible demo -b -m shell -a "systemctl status httpd"
+   18  ansible demo -b -m  -a "systemctl status httpd"
+   19* ansible demo -b  -a "systemctl status httpd
+   20  ansible demo -b -m  service -a "name=httpd state=started"
+   21  ansible demo -b -m  command -a "systemctl status httpd"
+   22  ansible demo -b -m service -a "name=httpd state=stopped"
+   23  ansible demo -b -m yum -a "pkg=httpd state=absent"
+   24  ansible demo -b -m service -a "which httpd"
+   25  ansible demo -b -m shell -a "which httpd"
+   26  ansible demo -b -m user -a "name=sak state=present"
+   27  ansible demo -b  -a "cat /etc/passwd/"
+   28  ansible demo -b  -a "cat /etc/passwd"
+   29  ansible demo -b -m user -a "name=sak state=absent"
+   30  ansible demo -b -m group -a "name=devops state=present"
+   31  ansible demo -b -a "cat /etc/group"
+   32  ansible demo -b -m group -a "name=devops state=absent"
+   33  ansible demo -b -m file -a "path=/home/ansible/demo state=directory"
+   34  ansible demo -b -m file -a "path=/home/ansible/demo state=absent"
+   35  ansible demo -b -m file -a "path=/home/ansible/demo state=directory mode=0755"
+   36  ansible demo -b -m file -a "path=/home/ansible/demo state=absent mode=0755"
+   37  ansible demo -b -m file -a "path=/home/ansible/jsp.txt state=touch"
+   38  ansible demo -b -m file -a "path=/home/ansible/jsp.txt state=absent"
+   39  ansible demo -b -m file -a "path=/home/ansible/jsp.txt state=touch mode=0755"
+   40  ansible demo -b -m file -a "path=/home/ansible/jsp.txt state=absent mode=0755"
+   41  ansible demo -b -m copy -a "src=/home/ansible/file.txt dest=/home/ansible"
